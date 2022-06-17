@@ -1,9 +1,14 @@
 package net.kale.bareoutdoors;
 
+import net.kale.bareoutdoors.entity.ModEntityTypes;
+import net.kale.bareoutdoors.entity.custom.NewtEntity;
+import net.kale.bareoutdoors.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -35,13 +40,15 @@ public class BareOutdoors
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+
+        ModItems.register(eventBus);
+        ModEntityTypes.register(eventBus);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    private void setup(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.NEWT.get(), NewtEntity.setAttributes());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

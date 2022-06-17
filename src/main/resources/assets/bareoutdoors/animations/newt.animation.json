@@ -1,0 +1,80 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"loop": true
+		},
+		"walk": {
+			"loop": true,
+			"animation_length": 1.20833,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 2.5, 0]
+						},
+						"0.625": {
+							"vector": [0, -2.5, 0]
+						},
+						"1.2083": {
+							"vector": [0, 2.5, 0]
+						}
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 37.5, 0]
+						},
+						"0.625": {
+							"vector": [0, -45, 0]
+						},
+						"1.2083": {
+							"vector": [0, 37.5, 0]
+						}
+					}
+				},
+				"rightleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 32.5, 0]
+						},
+						"0.625": {
+							"vector": [0, -40, 0]
+						},
+						"1.2083": {
+							"vector": [0, 32.5, 0]
+						}
+					}
+				},
+				"backleftleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -32.5, 0]
+						},
+						"0.625": {
+							"vector": [0, 52.5, 0]
+						},
+						"1.2083": {
+							"vector": [0, -32.5, 0]
+						}
+					}
+				},
+				"backrightleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -52.5, 0]
+						},
+						"0.625": {
+							"vector": [0, 22.5, 0]
+						},
+						"1.2083": {
+							"vector": [0, -52.5, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
